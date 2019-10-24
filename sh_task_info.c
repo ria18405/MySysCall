@@ -13,10 +13,6 @@
 #include <linux/buffer_head.h>
 
 
-// #include<string.h>
-// #include<stdlib.h>
-// sys_define2(sys_sh_task_info,int,char*, )
-
 asmlinkage long sys_sh_task_info(int mypid,char *filename){
 
 	int nbytes;
@@ -36,28 +32,10 @@ asmlinkage long sys_sh_task_info(int mypid,char *filename){
 
 	mm_segment_t oldfs; 
 	oldfs = get_fs();
-    set_fs(get_ds());		
+    	set_fs(get_ds());		
 
-	// char current_wd[500];
-	// getcwd(current_wd, sizeof(current_wd));
-	// strcat(current_wd,"/");
-	// strcat(current_wd,filename);
+
 	fd= sys_open(filename,O_WRONLY | O_CREAT,0777);
-	// filp = sys_open("/home/riagupta/abc.txt",O_WRONLY | O_CREAT,0777);
-	// if(IS_ERR(filp)){
-	// 	err=PTR_ERR(filp);
-	// 	return 0;
-	// }
-// struct file *fd=
-
-
-	// set_fs(oldfs);
-	// if (fd <0) 
-	//     { 
-	//     	printk("Error Number % d\n", );  
-	//         perror("Error : ");                  
-	//     }
-//rewrite contents
 
 
 
